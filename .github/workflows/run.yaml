@@ -8,13 +8,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@master
       - name: download
         run: |
           wget "https://script.google.com/macros/s/AKfycbwIv-WsvT_1EvcyIaVBa5jxAWPjF-6DjAe-tkSUS5oDNcOmNkzFKcUaVlhuxLejuOPo/exec?callback=_roadInfoCallback" -o ./roadinfo.js
       - name: gitconfig
         run: |
-          git config --local user.email "kei.misawa@gmail.com"
-          git config --local user.name "330k"
+          git config --global user.email "kei.misawa@gmail.com"
+          git config --global user.name "330k"
       - name: commit
         run: |
           git add .
