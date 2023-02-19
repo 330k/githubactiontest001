@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@master
       - name: download
         run: |
-          wget "https://script.google.com/macros/s/AKfycbwIv-WsvT_1EvcyIaVBa5jxAWPjF-6DjAe-tkSUS5oDNcOmNkzFKcUaVlhuxLejuOPo/exec?callback=_roadInfoCallback" -o ./roadinfo.js
+          wget "https://script.google.com/macros/s/AKfycbwIv-WsvT_1EvcyIaVBa5jxAWPjF-6DjAe-tkSUS5oDNcOmNkzFKcUaVlhuxLejuOPo/exec?callback=_roadInfoCallback" -O ./roadinfo.js
       - name: gitconfig
         run: |
           git config --global user.email "kei.misawa@gmail.com"
@@ -22,6 +22,6 @@ jobs:
           git add .
           git commit -m 'Add JS' -a
           git pull
-          git push origin master
+          git push origin main
 
 
